@@ -1,9 +1,10 @@
-input {
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    -o-transition: all 0.30s ease-in-out;
+input.form-control {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
     outline: none;
+    padding: 15px;
 }
 
 input.active {
@@ -12,4 +13,26 @@ input.active {
 
 input.inactive:focus {
     color: orange;
+}
+
+form#friendsForm {
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    height: 245px;
+    bottom: 0px;
+    left: 0;
+    background: white;
+    padding-top: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-top: 1px solid #eee;
+}
+
+button.btn {
+    padding: 15px;
+    width: 200px;
+    margin: 0 auto;
+    width: 60%;
+    margin-left: 20%;
 }

@@ -2,10 +2,6 @@ import React, { Component } from "react";
 
 import "./Item.css";
 class Item extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -15,11 +11,12 @@ class Item extends Component {
       <li className="list-group-item">
         <img
           className="img-fluid img-thumbnail"
-          src={this.props.user.picture.thumbnail}
+          src={this.props.user.avatar}
+          alt="Avatar"
         />
-        {this.capitalizeFirstLetter(this.props.user.name.title)}{" "}
-        {this.capitalizeFirstLetter(this.props.user.name.first)}{" "}
-        {this.capitalizeFirstLetter(this.props.user.name.last)}
+        {this.capitalizeFirstLetter(this.props.user.title)}{" "}
+        {this.capitalizeFirstLetter(this.props.user.name)}{" "}
+        <i className="material-icons">arrow_forward_ios</i>
       </li>
     );
   }

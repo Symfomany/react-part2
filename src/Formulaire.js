@@ -1,21 +1,11 @@
 import React, { Component } from "react";
-import validator from "validator";
 import Input from "react-validation/build/input";
 import Form from "react-validation/build/form";
 import "./Formulaire.css";
 
 const required = value => {
   if (!value.toString().trim().length) {
-    // We can return string or jsx as the 'error' prop for the validated Component
     return <span className="alert alert-danger">Requis!</span>;
-  }
-};
-
-const email = value => {
-  if (!validator.isEmail(value)) {
-    return (
-      <span className="alert alert-warning">{value} is not a valid email.</span>
-    );
   }
 };
 
@@ -42,36 +32,39 @@ class Formulaire extends Component {
     }
   }
   handleSubmit(event) {
-    alert("A name was submitted: " + this.state.value);
     event.preventDefault();
+    this.props.add(this.formUser.getValues());
   }
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form
+        ref={el => (this.formUser = el)}
+        onSubmit={this.handleSubmit}
+        id="friendsForm"
+      >
         <div className="form-group">
-          <label>Name</label>
-          <input
-            onChange={this.handleChange}
-            name="name"
-            className={this.state.styleInput}
-            type="text"
-          />
-        </div>
-
-        <div className="form-group">
-          <label>Email</label>
           <Input
-            value="email@email.com"
-            name="email"
-            validations={[required, email]}
+            placeholder="Mme Emilia Valenzuela"
+            name="nom"
+            validations={[required]}
             className="form-control"
+            ref={el => (this.nom = el)}
           />
         </div>
 
+        <div className="form-group">
+          <Input
+            placeholder="https://img.scoop.it/OagkkVFcMUTgkg4asEVd1Dl72eJkfbmt4t8yenImKBVu3R5GR0vdKD8rGoGofQDK"
+            name="url"
+            validations={[required]}
+            className="form-control"
+            ref={el => (this.url = el)}
+          />
+        </div>
         <div ref={el => (this.errors = el)} />
         <button type="submit" className="btn btn-primary">
-          Enregistrer
+          Ajouter cet ami
         </button>
       </Form>
     );

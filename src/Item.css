@@ -1,4 +1,11 @@
 li img.img-thumbnail {
-  border-radius: 50%;
-  margin-right: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 70px;
+    height: 70px;
+}
+
+li i.material-icons {
+    float: right;
+    margin-top: 19px;
 }

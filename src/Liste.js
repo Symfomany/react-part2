@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import Item from "./Item";
+import "./Liste.css";
 
 class Liste extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
-      <ul className="list-group">
-        {this.props.users.map(item => <Item key={item.id.value} user={item} />)}
-      </ul>
+      <div>
+        <header>
+          <h3 className="title">Mes Amies</h3>
+        </header>
+        <ul id="liste" className="list-group">
+          {this.props.users.map(item => <Item key={item.id} user={item} />)}
+        </ul>
+      </div>
     );
   }
 }
