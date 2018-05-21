@@ -15,9 +15,7 @@ class Item extends Component {
   }
 
   favorite(user) {
-    this.setState({
-      favorite: !this.state.favorite
-    });
+    console.log(user);
   }
 
   render() {
@@ -28,14 +26,9 @@ class Item extends Component {
           src={this.props.user.avatar}
           alt="Avatar"
         />
+        {this.capitalizeFirstLetter(this.props.user.title)}{" "}
         {this.capitalizeFirstLetter(this.props.user.name)}{" "}
         <i className="material-icons">arrow_forward_ios</i>
-        <i
-          onClick={e => this.props.remove(this.props.user)}
-          className="material-icons"
-        >
-          clear
-        </i>
         <i onClick={this.favorite} className="material-icons">
           {!this.state.favorite ? "star_border" : "star"}
         </i>

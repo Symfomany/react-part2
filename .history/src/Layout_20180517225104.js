@@ -79,8 +79,9 @@ class Layout extends Component {
   }
 
   addUser(user) {
+    console.log([...this.state.users, ...user]);
     this.setState({
-      users: [user, ...this.state.users]
+      users: [...this.state.users, ...user]
     });
   }
   render() {

@@ -34,9 +34,8 @@ class Formulaire extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.add(this.formUser.getValues());
-    console.log(this.nom);
-    this.name.value = "";
-    this.avatar.value = "";
+    this.nom.value = "";
+    this.url.value = "";
   }
 
   render() {
@@ -49,10 +48,10 @@ class Formulaire extends Component {
         <div className="form-group">
           <Input
             placeholder="Mme Emilia Valenzuela"
-            name="name"
+            name="nom"
             validations={[required]}
             className="form-control"
-            ref={el => (this.name = el)}
+            ref={el => (this.nom = el)}
           />
         </div>
 
@@ -60,10 +59,10 @@ class Formulaire extends Component {
           <Input
             value="https://img.scoop.it/OagkkVFcMUTgkg4asEVd1Dl72eJkfbmt4t8yenImKBVu3R5GR0vdKD8rGoGofQDK"
             placeholder="https://img.scoop.it/OagkkVFcMUTgkg4asEVd1Dl72eJkfbmt4t8yenImKBVu3R5GR0vdKD8rGoGofQDK"
-            name="avatar"
+            name="url"
             validations={[required]}
             className="form-control"
-            ref={el => (this.avatar = el)}
+            ref={el => (this.url = el)}
           />
         </div>
         <div ref={el => (this.errors = el)} />

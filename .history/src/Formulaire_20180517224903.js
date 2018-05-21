@@ -35,8 +35,8 @@ class Formulaire extends Component {
     event.preventDefault();
     this.props.add(this.formUser.getValues());
     console.log(this.nom);
-    this.name.value = "";
-    this.avatar.value = "";
+    this.nom.value = "";
+    this.url.value = "";
   }
 
   render() {

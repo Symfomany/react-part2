@@ -7,9 +7,7 @@ class Liste extends Component {
     return (
       <div>
         <ul id="liste" className="list-group">
-          {this.props.users.map(item => (
-            <Item remove={this.props.remove} key={item.name} user={item} />
-          ))}
+          {this.props.users.map(item => <Item key={item.id} user={item} />)}
         </ul>
       </div>
     );

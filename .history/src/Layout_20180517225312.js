@@ -80,7 +80,7 @@ class Layout extends Component {
 
   addUser(user) {
     this.setState({
-      users: [user, ...this.state.users]
+      users: [...this.state.users, user]
     });
   }
   render() {

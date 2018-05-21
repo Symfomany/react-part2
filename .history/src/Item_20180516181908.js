@@ -2,22 +2,8 @@ import React, { Component } from "react";
 
 import "./Item.css";
 class Item extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      favorite: false
-    };
-    this.favorite = this.favorite.bind(this);
-  }
-
   capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-  favorite(user) {
-    this.setState({
-      favorite: !this.state.favorite
-    });
   }
 
   render() {
@@ -28,16 +14,14 @@ class Item extends Component {
           src={this.props.user.avatar}
           alt="Avatar"
         />
+        {this.capitalizeFirstLetter(this.props.user.title)}{" "}
         {this.capitalizeFirstLetter(this.props.user.name)}{" "}
         <i className="material-icons">arrow_forward_ios</i>
         <i
-          onClick={e => this.props.remove(this.props.user)}
+          onClick={e => this.props.favorite(this.props.user)}
           className="material-icons"
         >
-          clear
-        </i>
-        <i onClick={this.favorite} className="material-icons">
-          {!this.state.favorite ? "star_border" : "star"}
+          star_border
         </i>
       </li>
     );

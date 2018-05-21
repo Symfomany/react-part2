@@ -28,6 +28,7 @@ class Item extends Component {
           src={this.props.user.avatar}
           alt="Avatar"
         />
+        {this.capitalizeFirstLetter(this.props.user.title)}{" "}
         {this.capitalizeFirstLetter(this.props.user.name)}{" "}
         <i className="material-icons">arrow_forward_ios</i>
         <i

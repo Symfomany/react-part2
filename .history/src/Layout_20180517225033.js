@@ -21,41 +21,49 @@ class Layout extends Component {
     // ajax avec Axios... (Vincent 😘 )
     const users = [
       {
+        title: "Mr",
         name: "Vincent Ballut",
         avatar:
           "https://www.super-insolite.com/wp-content/uploads/2014/10/c/h/chuck-norris.jpg"
       },
       {
+        title: "Mme",
         name: "Marlène Maizonniaux",
         avatar:
           "https://pbs.twimg.com/profile_images/985839125155762177/TR1y8bO1_400x400.jpg"
       },
       {
+        title: "Mr",
         name: "Barré Sylvain",
         avatar:
           "https://cdn.images.express.co.uk/img/dynamic/20/590x/secondary/negan-832392.jpg"
       },
       {
+        title: "Mme",
         name: "Meziere Marjorie",
         avatar:
           "https://media1.woopic.com/api/v1/images/174%2Fwebedia-cine-diaporama%2Fb58%2F49b%2Ff85798908f7477c53baad55ca3%2F1252546-quand-on-pense-actrice-rousse-le-premi-orig-4.jpg?format=400x400&facedetect=1&quality=85"
       },
       {
+        title: "Mme",
         name: "Laetitia Varella",
         avatar:
           "http://static8.viadeo-static.com/x4YuZbfSKX3POWsqGN7ncoCWGZc=/300x300/member/002211simb9od6iq?ts=1381582560000"
       },
       {
+        title: "Mme",
         name: "Julie Diabinho",
         avatar:
           "https://img.20mn.fr/T7B8k1cKSUGW1b3vIBzcUA/310x190_actrice-taylor-hickson-avant-premiere-film-everything-everything-los-angeles-mai-2017"
       },
       {
+        title: "Mr",
         name: "Julien Boyer",
         avatar:
           "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAYeAAAAJDEzNzhkMTM0LWM3MTctNDdiMi04YzI3LWY4ZjhiNDVmM2Q2MA.jpg"
       },
       {
+        title: "Mme",
         name: "Katy Weslet",
         avatar: "https://www.quizz.biz/uploads/quizz/914482/1_H7gCd.jpg"
       }
@@ -79,8 +87,9 @@ class Layout extends Component {
   }
 
   addUser(user) {
+    console.log([...this.state.users, ...user]);
     this.setState({
-      users: [user, ...this.state.users]
+      users: [...this.state.users, ...user]
     });
   }
   render() {

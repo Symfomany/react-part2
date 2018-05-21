@@ -28,10 +28,11 @@ class Item extends Component {
           src={this.props.user.avatar}
           alt="Avatar"
         />
+        {this.capitalizeFirstLetter(this.props.user.title)}{" "}
         {this.capitalizeFirstLetter(this.props.user.name)}{" "}
         <i className="material-icons">arrow_forward_ios</i>
         <i
-          onClick={e => this.props.remove(this.props.user)}
+          onClick={this.props.remove(this.props.user)}
           className="material-icons"
         >
           clear

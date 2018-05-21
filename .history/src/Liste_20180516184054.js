@@ -8,7 +8,11 @@ class Liste extends Component {
       <div>
         <ul id="liste" className="list-group">
           {this.props.users.map(item => (
-            <Item remove={this.props.remove} key={item.name} user={item} />
+            <Item
+              remove={e => this.props.remove(e)}
+              key={item.id}
+              user={item}
+            />
           ))}
         </ul>
       </div>
