@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Heading.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Heading extends Component {
   render() {
@@ -11,7 +11,7 @@ class Heading extends Component {
           {this.props.nb > 0 && (
             <span className="badge">{this.props.nb} amis</span>
           )}
-          <NavLink to="/signup">Sign Up</NavLink>
+          <Link to="/signup">Sign Up</Link>
         </h3>
       </header>
     );
